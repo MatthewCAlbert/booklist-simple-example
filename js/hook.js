@@ -37,7 +37,6 @@ const insertBookHandler = (e) => {
   if (validator.length > 0) return alert(validator);
 
   // Process
-  document.dispatchEvent(oninsert);
   myBookshelf.insertBook(
     book.isComplete ? "completedlist" : "readinglist",
     book
@@ -70,7 +69,6 @@ document.getElementById("searchForm").addEventListener("submit", (e) => {
   e.preventDefault();
   myBookshelf.searchBook(document.getElementById("search-title").value);
 });
-// document.addEventListener("oninsert", this.checkUpdateHandler);
 
 // Action Button Handler
 function moveActionHandler(e) {
@@ -94,10 +92,3 @@ function deleteActionHandler(e) {
     );
   }
 }
-
-// Form Validator
-document.querySelectorAll("input[name=year]").forEach((e) => {
-  e.addEventListener("input", (f) => {
-    f.target.value.match(/\d+/i);
-  });
-});

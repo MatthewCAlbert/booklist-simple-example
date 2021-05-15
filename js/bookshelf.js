@@ -4,7 +4,6 @@ function checkStorage() {
   if (!ok) console.error("Storage not supported!");
   return ok;
 }
-const oninsert = new Event("oninsert");
 
 class BookshelfApps {
   constructor() {}
