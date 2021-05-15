@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookshelf App | Dicoding Final Project</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="root">
+    <header>
+      <h1 class="my-0">Bookshelf Apps</h1>
+      <small>by Matthew Christopher Albert</small>
+    </header>
+    <div id="content">
+
+      <form class="container bordered mt-5 bg-lightpurple" id="insertForm">
+        <h2>Masukan Buku Baru</h2>
+        <div class="w-100">
+          <label for="title">Judul</label>
+          <input type="text" name="title" id="title" class="form-control" required/>
+        </div>
+        <div class="w-100">
+          <label for="author">Penulis</label>
+          <input type="text" name="author" id="author" class="form-control" required/>
+        </div>
+        <div class="w-100">
+          <label for="year">Tahun</label>
+          <input type="text" name="year" id="year" class="form-control" required/>
+        </div>
+        <div class="w-100">
+          <label for="isComplete">Selesai dibaca</label><input type="checkbox" name="isComplete" id="isComplete" value="1">
+        </div>
+        <button type="submit" class="btn">Masukan Buku</button>
+      </form>
+      
+      <form class="container bordered bg-lightpurple mt-5" id="searchForm">
+        <h2>Cari Buku</h2>
+        <div class="w-100 d-flex flex-gap-1 justify-content-between">
+          <label for="search-title">Judul</label>
+          <input type="text" name="title" id="search-title" class="form-control" />
+          <button type="submit">Cari</button>
+        </div>
+        <div class="container mb-5" id="filterlist">
+
+        </div>
+      </form>
+
+      <div class="container bordered bg-lightpurple mt-5">
+        <h2>Belum selesai dibaca</h2>
+        <div class="container mb-5" id="readinglist">
+        </div>
+      </div>
+      
+      <div class="container bordered bg-lightpurple mt-5 mb-5">
+        <h2>Selesai dibaca</h2>
+        <div class="container mb-5" id="completedlist">
+        </div>
+      </div>
+
+    </div>
+  
+    <div class="modal d-none" id="modal1">
+      <div class="modal-inner bg-lightpurple">
+        <form class="container" id="editForm">
+          <span class="btn btn-small bg-lightred" data-toggle="close" style="align-self:flex-end;">&#10006;</span>
+          <h2 class="mb-5">Edit Buku #<span class="bookId"></span></h2>
+          <input type="hidden" name="id" value="">
+          <div class="w-100">
+            <label for="edit-title">Judul</label>
+            <input type="text" name="title" id="edit-title" class="form-control" required />
+          </div>
+          <div class="w-100">
+            <label for="edit-author">Penulis</label>
+            <input type="text" name="author" id="edit-author" class="form-control" required />
+          </div>
+          <div class="w-100">
+            <label for="edit-year">Tahun</label>
+            <input type="text" name="year" id="edit-year" class="form-control" required />
+          </div>
+          <div class="w-100 d-none">
+            <input type="checkbox" name="isComplete" id="edit-isComplete"
+              value="1" tabindex="-1">
+          </div>
+          <button type="submit" class="btn">Simpan</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+  <script src="./js/modal.js"></script>
+  <script src="./js/bookshelf.js"></script>
+  <script src="./js/hook.js"></script>
+</body>
+</html>
